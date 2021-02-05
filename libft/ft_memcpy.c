@@ -1,11 +1,11 @@
-#include <string.h>
+#include "libft.h"
 
-void *ft_memcpy(void *dest, const void *src, size_t n)
+void    *ft_memcpy(void *dest, const void *src, size_t n)
 {
-    unsigned count;
+    unsigned int count;
 
     count = 0;
-    while (count != n)
+    while (count < n)
     {
         ((unsigned char *)dest)[count] = ((unsigned char *)src)[count];
         count++;

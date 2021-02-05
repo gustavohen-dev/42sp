@@ -1,14 +1,13 @@
-#include <string.h>
+#include "libft.h"
 
-void *ft_memset(void *str, int c, size_t n)
+void    *ft_memset(void *str, int c, size_t n)
 {
     unsigned int count;
 
     count = 0;
-    c = (unsigned char)c;
     while (count != n)
     {
-        ((unsigned char *)str)[count] = c;
+        ((unsigned char *)str)[count] = (unsigned char)c;
         count++;
     }
     return (str);
