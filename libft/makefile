@@ -1,19 +1,19 @@
-all: printy
+NAME = libft.a
+SRCS = ft_memset.c ft_bzero.c ft_memcpy.c main.c
 
-printy: ft_memset.o ft_bzero.o ft_memcpy.o main.o
-	gcc -Wextra -Werror -Wall main.o ft_memset.o ft_bzero.o ft_memcpy.o -o prog
+OBJS = $(SRCS:.c=.o)
+FLAGS = -Wextra -Werror -Wall
 
-ft_memset.o: ft_memset.c
-	gcc -Wextra -Werror -Wall -c ft_memset.c -o ft_memset.o
+all: $(NAME)
 
-ft_bzero.o: ft_bzero.c
-	gcc -Wextra -Werror -Wall -c ft_bzero.c -o ft_bzero.o
-
-ft_memcpy.o: ft_memcpy.c
-	gcc -Wextra -Werror -Wall -c ft_memcpy.c -o ft_memcpy.o
-
-main.o: main.c libft.h
-	gcc -Wextra -Werror -Wall -c main.c -o main.o
+$(NAME): $(SRCS) libft.h
+	gcc $(FLAGS) -c $(SRCS)
+	gcc $(FLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	rm -rf *.o *~ printy
+	rm -f $(OBJS)
+
+fclean:
+	rm -rf $(NAME)
+
+re: fclean all
