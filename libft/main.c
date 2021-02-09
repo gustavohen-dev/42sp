@@ -56,13 +56,13 @@ int main()
 
     printf("Function: memccpy 60 characters or to character 't'\n");
     printf("Source: %s\n", string1);
-    pdest = memccpy(buffer, string1, 't', 60);
+    pdest = memccpy(buffer, string1, 'b', 60);
     *pdest = '\0';
     printf("Result: %s\n", buffer);
-
+    
     printf("Function: ft_memccpy 60 characters or to character 't'\n");
     printf("Source: %s\n", string1);
-    pdest = ft_memccpy(buffer2, string1, 't', 60);
+    pdest = ft_memccpy(buffer2, string1, 'b', 60);
     *pdest = '\0';
     printf("Result: %s\n", buffer2);
 
@@ -83,7 +83,7 @@ int main()
     puts("=================================");
 
     const char str2[50] = "http://www.tutorialspoint.com";
-    const char ch = '.';
+    const char ch = ':';
     char *ret;
 
     ret = memchr(str2, ch, strlen(str2));
@@ -102,8 +102,8 @@ int main()
     int ret2;
     int ret3;
 
-    memcpy(str3, "abcdef", 6);
-    memcpy(str4, "ABCDEF", 6);
+    memcpy(str3, "ABCDEF", 6);
+    memcpy(str4, "abcdef", 6);
 
     ret2 = memcmp(str3, str4, 6);
 
@@ -117,6 +117,9 @@ int main()
 
     ret3 = ft_memcmp(str3, str4, 6);
 
+    printf("%d\n", ret2);
+    printf("%d\n", ret3);
+
     if(ret3 > 0) {
         printf("str4 is less than str3\n");
     } else if(ret3 < 0) {
@@ -125,5 +128,42 @@ int main()
         printf("str3 is equal to str4\n");
     }
 
+    puts("=================================");
+
+    char str5[50];
+    int len;
+    int len2;
+
+    strcpy(str5, "This is tutorialspoint.com");
+
+    len = strlen(str5);
+    printf("Length of |%s| is |%d|\n", str5, len);
+
+    len2 = ft_strlen(str5);
+    printf("Length of |%s| is |%d|\n", str5, len2);
+
+    puts("=================================");
+
+    char str6[50];
+    char str7[50];
+
+    strcpy(str6, "This is a test");
+    strcpy(str7, "Test");
+
+    printf("%s\n", str7);
+    ft_strlcpy(str7, str6, 50);
+    printf("%s\n", str7);
+
+    puts("=================================");
+
+    char str8[50];
+    char str9[50];
+
+    strcpy(str8, "This is a");
+    strcpy(str9, " test");
+
+    printf("%s\n", str8);
+    ft_strlcat(str8, str9, 50);
+    printf("%s\n", str8);
     return (0);
 }

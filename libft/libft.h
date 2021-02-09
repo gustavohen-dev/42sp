@@ -18,4 +18,10 @@ void    *ft_memchr(const void *str, int c, size_t n);
 
 int     ft_memcmp(const void *str1, const void *str2, size_t n);
 
+size_t  ft_strlen(const char *str);
+
+size_t  ft_strlcpy(char *dst, const char *src, size_t size);
+
+size_t  ft_strlcat(char *dst, const char *src, size_t size);
+
 #endif
