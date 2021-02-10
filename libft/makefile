@@ -11,7 +11,8 @@ all: $(NAME)
 
 $(NAME): $(SRCS) libft.h
 	gcc $(FLAGS) -c $(SRCS)
-	gcc $(FLAGS) $(OBJS) -o $(NAME)
+	ar rc $(NAME) $(OBJS)
+	ranlib $(NAME)
 
 clean:
 	rm -f $(OBJS)
