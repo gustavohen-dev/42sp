@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/10 01:51:37 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/10 04:27:18 by ghenriqu         ###   ########.fr       */
+/*   Created: 2021/02/10 04:30:21 by ghenriqu          #+#    #+#             */
+/*   Updated: 2021/02/10 04:57:54 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *pattern, size_t len)
+int     ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	unsigned int count;
-	unsigned int aux;
+    unsigned int count;
 
 	count = 0;
-	if (pattern == 0 || *pattern == '\0')
+	if (str1 == str2 || n == 0)
 	{
-		return ((char *)str);
+		return (0);
 	}
-
-	while (str[count] != '\0' && count < len)
+	while (str1[count] != '\0' && count < n && str1[count] == str2[count])
 	{
-		aux = 0;
-		while (pattern[aux] == str[count + aux] && count + aux < len)
-		{
-			if (pattern[aux + 1] == '\0')
-			{
-				return ((char *)str + count);
-			}
-			aux++;
-		}
-		count++;
+        count++;
 	}
-	return (0);
+	return (((unsigned char)str1[count] - (unsigned char)str2[count]));
 }

@@ -184,7 +184,122 @@ int main()
     puts("=================================");
 
     printf("String after |%s| is - |%s|\n", pattern, str11);
-    printf("String after |%s| is - |%s|\n", pattern, ft_strnstr(str10, pattern, 50));
+    printf("String after |%s| is - |%s|\n", pattern, ft_strnstr(str11, pattern, 50));
+
+    puts("=================================");
+
+    char str12[15];
+    char str13[15];
+    int ret5;
+
+    strcpy(str12, "abcdef");
+    strcpy(str13, "ABCDEF");
+
+    ret5 = strncmp(str12, str13, 4);
+
+    if(ret5 < 0) {
+        printf("str12 is less than str13\n");
+    } else if(ret5 > 0) {
+        printf("str13 is less than str12\n");
+    } else {
+        printf("str12 is equal to str13\n");
+    }
+
+    ret5 = ft_strncmp(str12, str13, 4);
+
+    if(ret5 < 0) {
+        printf("str12 is less than str13\n");
+    } else if(ret5 > 0) {
+        printf("str13 is less than str12\n");
+    } else {
+        printf("str12 is equal to str13\n");
+    }
+
+    puts("=================================");
+
+    char c;
+    c = 'J';
+    printf("isalpha: %d", isalpha(c));
+    c ='+';
+    printf("\nisalpha: %d", isalpha(c));
+
+    c = 'Q';
+    printf("\nft_isalpha %d", ft_isalpha(c));
+    c ='+';
+    printf("\nft_isalpha %d\n", ft_isalpha(c));
+
+    puts("=================================");
+
+    c = '9';
+    printf("isdigit: %d", isdigit(c));
+    c ='f';
+    printf("\nisdigit: %d", isdigit(c));
+
+    c = '9';
+    printf("\nft_isdigit: %d", ft_isdigit(c));
+    c ='f';
+    printf("\nft_isdigit: %d\n", ft_isdigit(c));
+
+    puts("=================================");
+
+    c = '9';
+    printf("isalnum: %d", isalnum(c));
+    c = 's';
+    printf("\nisalnum: %d", isalnum(c));
+
+    c = '9';
+    printf("\nft_isalnum: %d", ft_isalnum(c));
+    c = 's';
+    printf("\nft_isalnum: %d\n", ft_isalnum(c));
+
+    puts("=================================");
+
+    c = '9';
+    printf("isascii: %d", isascii(c));
+    c = 200;
+    printf("\nisascii: %d", isascii(c));
+
+    c = '9';
+    printf("\nft_isascii: %d", ft_isascii(c));
+    c = 200;
+    printf("\nft_isascii: %d\n", ft_isascii(c));
+
+    puts("=================================");
+
+    c = '9';
+    printf("isprint: %d", isprint(c));
+    c = 200;
+    printf("\nisprint: %d", isprint(c));
+
+    c = '9';
+    printf("\nft_isprint: %d", ft_isprint(c));
+    c = 200;
+    printf("\nft_isprint: %d\n", ft_isprint(c));
+
+    puts("=================================");
+
+    c = 'g';
+    printf("toupper: %d", toupper(c));
+    c = 'A';
+    printf("\ntoupper: %d", toupper(c));
+
+    c = 'g';
+    printf("\nft_toupper: %d", ft_toupper(c));
+    c = 'A';
+    printf("\nft_toupper: %d\n", ft_toupper(c));
+
+    puts("=================================");
+
+    c = 'g';
+    printf("tolower: %d", tolower(c));
+    c = 'A';
+    printf("\ntolower: %d", tolower(c));
+
+    c = 'g';
+    printf("\nft_tolower: %d", ft_tolower(c));
+    c = 'A';
+    printf("\nft_tolower: %d\n", ft_tolower(c));
+
 
     return (0);
 }

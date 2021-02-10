@@ -1,40 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/10 01:51:37 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/10 04:27:18 by ghenriqu         ###   ########.fr       */
+/*   Created: 2021/02/10 06:38:04 by ghenriqu          #+#    #+#             */
+/*   Updated: 2021/02/10 06:52:23 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *pattern, size_t len)
+int     ft_isascii(int c)
 {
-	unsigned int count;
-	unsigned int aux;
-
-	count = 0;
-	if (pattern == 0 || *pattern == '\0')
+	if (c >= 0 && c <= 127)
 	{
-		return ((char *)str);
-	}
-
-	while (str[count] != '\0' && count < len)
-	{
-		aux = 0;
-		while (pattern[aux] == str[count + aux] && count + aux < len)
-		{
-			if (pattern[aux + 1] == '\0')
-			{
-				return ((char *)str + count);
-			}
-			aux++;
-		}
-		count++;
+		return (1);
 	}
 	return (0);
 }

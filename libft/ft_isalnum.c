@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/10 00:25:50 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/10 04:59:26 by ghenriqu         ###   ########.fr       */
+/*   Created: 2021/02/10 06:24:15 by ghenriqu          #+#    #+#             */
+/*   Updated: 2021/02/10 06:29:16 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_memcmp(const void *str1, const void *str2, size_t n)
+int     ft_isalnum(int c)
 {
-	unsigned int count;
-	int value;
-
-	count = 0;
-	if (str1 == str2 || n == 0)
-	{
-		return (0);
-	}
-	while (count < n)
-	{
-		if (((unsigned char *)str1)[count] != ((unsigned char *)str2)[count])
-		{
-			value = ((unsigned char *)str1)[count] - ((unsigned char *)str2)[count];
-			break;
-		}
-		count++;
-	}
-	return (value);
+    if (ft_isalpha(c) > 0 || ft_isdigit(c) > 0)
+    {
+        return (8);
+    }
+    return (0);
 }

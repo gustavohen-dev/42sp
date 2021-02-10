@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 00:26:28 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/10 02:26:10 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/10 07:09:29 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 void	*ft_memset(void *str, int c, size_t n);
 
@@ -41,5 +42,21 @@ char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 
 char	*ft_strnstr(const char *str, const char *pattern, size_t len);
+
+int		ft_strncmp(const char *str1, const char *str2, size_t n);
+
+int		ft_isalpha(int arg);
+
+int		ft_isdigit(int c);
+
+int     ft_isalnum(int c);
+
+int		ft_isascii(int c);
+
+int		ft_isprint(int c);
+
+int		ft_toupper(int c);
+
+int		ft_tolower(int c);
 
 #endif
