@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/10 00:26:13 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/10 02:17:16 by ghenriqu         ###   ########.fr       */
+/*   Created: 2021/02/10 01:51:37 by ghenriqu          #+#    #+#             */
+/*   Updated: 2021/02/10 02:35:24 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcpy(char *dest, const char *src, size_t size)
+char	*ft_strnstr(const char *str, const char *pattern, size_t len)
 {
-	unsigned count;
+	unsigned int count;
+	unsigned int aux;
 
 	count = 0;
-	if (size == 0)
+	if (pattern == 0 || *pattern == '\0')
 	{
-		return (ft_strlen(src));
+		return ((char *)str);
 	}
-	while (count < size || src[count] == '\0')
+
+	while (str[count] != '\0' && count < len)
 	{
-		dest[count] = src[count];
+		aux = 0;
+		while (pattern[aux] == str[count + aux] && count + aux < len)
+		{
+			if (pattern[aux + 1] == '\0')
+			{
+				return ((char *)str + count);
+			}
+			aux++;
+		}
 		count++;
 	}
-	dest[count] = '\0';
-
-	return (count);
+	return (0);
 }

@@ -165,5 +165,26 @@ int main()
     printf("%s\n", str8);
     ft_strlcat(str8, str9, 50);
     printf("%s\n", str8);
+
+    puts("=================================");
+
+    const char str10[] = "http://www.tutorialspoint.com";
+    const char str11[] = "What you would like today ?";
+    const char pattern[] = "would";
+    const char ch2 = '.';
+
+    printf("String after |%c| is - |%s|\n", ch2, strchr(str10, ch2));
+    printf("String after |%c| is - |%s|\n", ch2, ft_strchr(str10, ch2));
+
+    puts("=================================");
+
+    printf("String after |%c| is - |%s|\n", ch2, strrchr(str10, ch2));
+    printf("String after |%c| is - |%s|\n", ch2, ft_strrchr(str10, ch2));
+
+    puts("=================================");
+
+    printf("String after |%s| is - |%s|\n", pattern, str11);
+    printf("String after |%s| is - |%s|\n", pattern, ft_strnstr(str10, pattern, 50));
+
     return (0);
 }
