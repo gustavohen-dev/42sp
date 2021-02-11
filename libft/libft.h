@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 00:26:28 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/10 07:09:29 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/11 02:29:35 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define LIBFT
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 
@@ -58,5 +59,11 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 
 int		ft_tolower(int c);
+
+int     ft_atoi(const char *str);
+
+void    *ft_calloc(size_t nitems, size_t size);
+
+char    *ft_strdup(const char *string);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 01:51:37 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/10 04:27:18 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/11 02:18:25 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strnstr(const char *str, const char *pattern, size_t len)
 {
-	unsigned int count;
+	size_t count;
 	unsigned int aux;
 
 	count = 0;

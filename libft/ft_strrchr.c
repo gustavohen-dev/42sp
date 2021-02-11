@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 01:06:49 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/10 01:39:39 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/11 07:20:21 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ char    *ft_strrchr(const char *str, int c)
 	int len;
 
 	len = ft_strlen(str);
-
-	while (len > 0)
+	while (len >= 0)
 	{
 		if (str[len] == (unsigned char)c)
 		{

@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 04:30:21 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/10 04:57:54 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/11 05:23:30 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 int     ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-    unsigned int count;
+    size_t count;
 
 	count = 0;
 	if (str1 == str2 || n == 0)
 	{
 		return (0);
 	}
-	while (str1[count] != '\0' && count < n && str1[count] == str2[count])
+	while (str1[count] != '\0' && count + 1 < n && str1[count] == str2[count] && 
+	str2[count] != '\0')
 	{
         count++;
 	}

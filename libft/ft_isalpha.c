@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 05:05:54 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/10 05:18:28 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/11 02:12:30 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int     ft_isalpha(int arg)
 {
-    if ((arg >= 'a' && arg <= 'z') || (arg >= 'A' && arg <= 'Z'))
-    {
-        return (1024);
-    }
+	if ((arg >= 'a' && arg <= 'z') || (arg >= 'A' && arg <= 'Z'))
+	{
+		return (1024);
+	}
 
-    return (0);
+	return (0);
 }
