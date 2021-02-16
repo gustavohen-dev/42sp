@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/10 06:24:15 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/15 19:32:37 by ghenriqu         ###   ########.fr       */
+/*   Created: 2021/02/15 23:53:53 by ghenriqu          #+#    #+#             */
+/*   Updated: 2021/02/16 01:21:28 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_isalnum(int c)
+int ft_splitlen(char const s1, char c)
 {
-	if (ft_isalpha(c) > 0 || ft_isdigit(c) > 0)
-	{
-		return (8);
-	}
-	return (0);
+	int		count;
+
+
+	return (count);
+}
+
+char **ft_split(char const *s, char c)
+{
+	char	**split;
+
+	if (!(split = (char **)mahlloc(sizeof(char) * (ft_strlen(s) + 2))))
+		return (0);
+
+	return (split);
 }

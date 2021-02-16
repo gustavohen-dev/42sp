@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 00:29:20 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/11 08:18:29 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/15 21:33:57 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,27 +29,21 @@ int		ft_check_atoi(const char *str)
 
 int     ft_atoi(const char *str)
 {
-	unsigned int count;
-	long int rtn;
-	long int mult;
-	long int check;
+	unsigned int 	count;
+	long int 		rtn;
+	long int 		mult;
+	long int 		check;
 
 	check = ft_check_atoi(str);
 	mult = 1;
 	rtn = 0;
 	count = 0;
 	if (*str == '\0')
-	{
 		return (0);
-	}
 	if (check > 0)
-	{
 		count = check;
-	}
 	if (str[count] == '-' || str[count] == '+')
-	{
 		count++;
-	}
 	while (ft_isdigit(str[count]) && str[count] != '\0')
 	{
 		rtn = rtn * mult;
@@ -58,9 +52,6 @@ int     ft_atoi(const char *str)
 		count++;
 	}
 	if (str[check] == '-')
-	{
 		rtn = rtn * -1;
-	}
-
 	return (rtn);
 }

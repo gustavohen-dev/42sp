@@ -6,13 +6,13 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 02:29:49 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/11 02:43:17 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/15 19:34:06 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strdup(const char *str)
+char	*ft_strdup(const char *str)
 {
 	char *ptr;
 	unsigned int len;

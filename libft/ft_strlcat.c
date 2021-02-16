@@ -6,34 +6,31 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 00:24:30 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/11 06:30:31 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/15 19:34:14 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlcat(char *dest, const char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int count;
-	unsigned int rtn;
-	int len;
+	size_t	i;
+	size_t	len_dest;
+	size_t	len_src;
 
-	count = 0;
-	len = ft_strlen(dest);
-	if (size > ft_strlen(src))
+	len_src = ft_strlen(src);
+	len_dest = 0;
+	if (dest == src)
+		return (0);
+	while (dest[len_dest] != '\0' && len_dest < size)
+		len_dest++;
+	i = len_dest;
+	while (size && src[i - len_dest] != '\0' && i < (size - 1))
 	{
-		rtn = len + ft_strlen(src);
+		dest[i] = src[i - len_dest];
+		i++;
 	}
-	else
-	{
-		rtn = ft_strlen(src) + size;
-	}
-	while (src[count] != '\0' && len + count < size)
-	{
-		dest[len + count] = src[count];
-		count++;
-	}
-	dest[len + count] = '\0';
-
-	return ((size_t)rtn);
+	if (len_dest < size)
+		dest[i] = '\0';
+	return (len_dest + len_src);
 }

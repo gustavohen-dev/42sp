@@ -306,7 +306,7 @@ int main()
 	int val;
 	char str_atoi[50];
 	
-	strcpy(str_atoi, "98993489");
+	strcpy(str_atoi, "\n\n\n  -46\b9 \n5d6");
 	val = atoi(str_atoi);
 	printf("atoi - String value = %s, Int value = %d\n", str_atoi, val);
 
@@ -358,6 +358,75 @@ int main()
 	char *result1;
 	result1 = ft_strdup(str15);
 	printf("ft_strdup : %s\n", result1);
+
+	puts("=================================");
+
+	char *result2;
+
+	result2 = ft_substr(str14, 4, 3);
+
+	printf("s: %s\n", str14);
+	printf("len: 3\n");
+	printf("ft_substr: %s\n", result2);
+
+	puts("=================================");
+
+	char *str16 = "conca";
+	char *str17 = "tenate";
+
+	printf("s1: %s\n", str16);
+	printf("s2: %s\n", str17);
+	printf("ft_strjoin: %s\n", ft_strjoin(str16, str17));
+
+	puts("=================================");
+
+	char *str18 = "fjHello World!sdjf";
+	char *str19 = "dsdjfl ";
+
+	printf("s1: %s\n", str18);
+	printf("s2: %s\n", str19);
+	printf("%s\n", ft_strtrim(str18, str19));
+
+	puts("=================================");
+
+	int nb;
+	char *str20;
+	  
+	nb = -2147483648LL;
+	str20 = ft_itoa(nb);
+
+	printf("Nb: %d\n", nb);
+	printf("ft_itoa: %s\n", str20);
+
+	puts("=================================");
+
+	unsigned int i1;
+
+	i1 = 0;
+	printf("ft_putchar_fd:\n");
+	while (i1 != ft_strlen(str18))
+	{
+		ft_putchar_fd(str18[i1], 1);
+		i1++;
+	}
+	printf("\n");
+
+	puts("=================================");
+
+	printf("ft_putstr_fd:\n");
+	ft_putstr_fd(str18, 1);
+	printf("\n");
+
+	puts("=================================");
+
+	printf("ft_putendl_fd:\n");
+	ft_putendl_fd(str18, 1);
+
+	puts("=================================");
+
+	printf("ft_putnbr_fd:\n");
+	ft_putnbr_fd(nb, 1);
+	printf("\n");
 
 	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 00:25:50 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/11 02:15:23 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/15 19:33:26 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_memcmp(const void *str1, const void *str2, size_t n)
+int		ft_memcmp(const void *str1, const void *str2, size_t n)
 {
 	size_t count;
 	int value;

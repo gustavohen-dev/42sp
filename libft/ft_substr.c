@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/10 00:26:03 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/15 19:33:41 by ghenriqu         ###   ########.fr       */
+/*   Created: 2021/02/15 19:56:46 by ghenriqu          #+#    #+#             */
+/*   Updated: 2021/02/15 23:54:09 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t count;
+	char	*str;
+	size_t	s_len;
+	size_t	count;
+	size_t	start_count;
 
 	count = 0;
-	if (((unsigned char *)dest) < ((unsigned char *)src))
+	start_count = start;
+	s_len = ft_strlen(s);
+	if (!(str = malloc(sizeof(char) * (s_len + 1))))
 	{
-		while (count < n)
+		return (0);
+	}
+	if (start < s_len)
+	{
+		while (start_count < start + len && s[start_count] != '\0')
 		{
-			((unsigned char *)dest)[count] = ((unsigned char *)src)[count];
+			str[count] =  s[start_count];
 			count++;
+			start_count++;
 		}
 	}
-	else if (((unsigned char *)dest) > ((unsigned char *)src))
-	{
-		while (n > 0)
-		{
-			((unsigned char *)dest)[n - 1] = ((unsigned char *)src)[n - 1];
-			n--;
-		}
-	}
-	return (dest);
+	str[count] = '\0';
+	return (str);
 }

@@ -6,13 +6,13 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 00:30:47 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/11 07:18:06 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/15 19:33:56 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strchr(const char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
 	int count;
 
