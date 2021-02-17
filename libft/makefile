@@ -26,3 +26,8 @@ fclean:
 	rm -rf $(NAME)
 
 re: fclean clean all
+
+git:
+	git add .
+	git commit -m "Update"
+	git push -u origin master

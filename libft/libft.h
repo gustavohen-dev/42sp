@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 00:26:28 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/16 06:16:17 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/17 00:54:49 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 
 void	ft_putnbr_fd(int n, int fd);
+
+char	**ft_split(char const *s, char c);
 
 #endif
