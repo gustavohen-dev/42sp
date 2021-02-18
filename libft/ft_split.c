@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 23:53:53 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/18 02:46:21 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/18 02:55:42 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_addstr(char const *s, char c, int block)
 	{
 		while (s && block > 0)
 		{
-			s++;
-			while (*s == c)
+			if (*s == c)
 			{
-				s++;
+				block--;
 			}
+			s++;
 		}
 	}
 	while (s[end] != c && s[end])
