@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 23:53:53 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/18 01:06:11 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/18 02:46:21 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,25 @@
 
 char	*ft_addstr(char const *s, char c, int block)
 {
-	int		count;
+	int		end;
 
-	count = 0;
+	end = 0;
 	if (block > 0)
 	{
 		while (s && block > 0)
 		{
-			if (*s == c)
-			{
-				block--;
-			}
 			s++;
-			count++;
+			while (*s == c)
+			{
+				s++;
+			}
 		}
 	}
-	while (s[count] && s[count] != c)
+	while (s[end] != c && s[end])
 	{
-		count++;
+		end++;
 	}
-	return (ft_substr(s, 0, count));
+	return (ft_substr(s, 0, end));
 }
 
 int		ft_nbstrs(char const *s, char c)

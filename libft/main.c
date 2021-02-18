@@ -432,9 +432,9 @@ int main()
 
 	char **p;
 	int    j;
-	p = ft_split("um*dois*tres_quatro", '*');
+	p = ft_split("          ", ' ');
 	j = 0;
-	while(p[j] != '\0')
+	while(p[j] != NULL)
 	{
 	printf("%s\n", p[j]);
 	j++;
