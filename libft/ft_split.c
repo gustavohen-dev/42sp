@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 23:53:53 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/18 02:55:42 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/18 04:07:18 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,20 @@ int		ft_nbstrs(char const *s, char c)
 	len = ft_strlen(s);
 	while (len >= 0)
 	{
+		len--;
 		if (s[len] == c)
 		{
+			/*while (s[len] == ' ')
+			{
+				if (len == 0)
+				{
+					len--;
+					return (-2);
+				}
+				len--;
+			}*/
 			rtn++;
 		}
-		len--;
 	}
 	return (rtn);
 }

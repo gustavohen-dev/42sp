@@ -432,7 +432,7 @@ int main()
 
 	char **p;
 	int    j;
-	p = ft_split("          ", ' ');
+	p = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ');
 	j = 0;
 	while(p[j] != NULL)
 	{
