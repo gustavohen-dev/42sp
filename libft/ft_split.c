@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 23:53:53 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/18 06:04:21 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/18 06:41:04 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,20 +70,19 @@ int		ft_nbstrs(char const *s, char c)
 	len = ft_strlen(s);
 	while (len >= 0)
 	{
-		len--;
 		if (s[len] == c)
 		{
 			while (s[len] == ' ')
 			{
 				if (len == 0)
 				{
-					len--;
-					return (-2);
+					return (rtn);
 				}
 				len--;
 			}
 			rtn++;
 		}
+		len--;
 	}
 	return (rtn);
 }
@@ -93,13 +92,21 @@ char	**ft_split(char const *s, char c)
 	char	**tab;
 	char	*str;
 	int		n_strs;
+	int		count;
 
+	count = 0;
 	if (!s)
 		return (0);
 	str = ft_rmspc(s);
 	n_strs = ft_nbstrs(str, c);
 	if (!(tab = (char **)malloc(sizeof(char *) * (n_strs + 2))))
 		return (0);
+	while (s[count] && s[count] == ' ')
+	{
+		if (s[count + 1] == '\0')
+			return (tab);
+		count++;
+	}
 	while (n_strs >= 0)
 	{
 		tab[n_strs] = ft_addstr(str, c, n_strs);
