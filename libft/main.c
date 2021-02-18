@@ -428,5 +428,17 @@ int main()
 	ft_putnbr_fd(nb, 1);
 	printf("\n");
 
+	puts("=================================");
+
+	char **p;
+	int    j;
+	p = ft_split("um*dois*tres_quatro", '*');
+	j = 0;
+	while(p[j] != '\0')
+	{
+	printf("%s\n", p[j]);
+	j++;
+	}
+
 	return (0);
 }
