@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 00:26:28 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/19 00:55:05 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/19 01:54:32 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,11 @@ void			ft_putnbr_fd(int n, int fd);
 char			**ft_split(char const *s, char c);
 
 t_list			*ft_lstnew(void *content);
+
+void			ft_lstadd_front(t_list **lst, t_list *new);
+
+int				ft_lstsize(t_list *lst);
+
+t_list			*ft_lstlast(t_list *lst);
 
 #endif

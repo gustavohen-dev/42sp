@@ -6,7 +6,8 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_tolower.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c *ft_strjoin.c\
 	ft_strtrim.c ft_itoa.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c\
 	ft_putendl_fd.c ft_putnbr_fd.c ft_split.c
-SRCS_BONUS = ft_lstnew.c
+SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
+	
 
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
@@ -15,14 +16,13 @@ FLAGS = -Wextra -Werror -Wall
 all: $(NAME)
 
 $(NAME): $(SRCS) libft.h
-	gcc $(FLAGS) -c $(SRCS)
+	gcc $(FLAGS) -c $(SRCS) $(SRCS_BONUS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 	gcc $(FLAGS) main.c libft.a
 	./a.out
 
 bonus: $(OBJS) $(OBJS_BONUS)
-	gcc $(FLAGS) -c $(SRCS) $(SRCS_BONUS)
 	ar rc $(NAME) $(OBJS) $(OBJS_BONUS)
 	ranlib $(NAME)
 
