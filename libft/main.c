@@ -93,7 +93,7 @@ int main()
 
 	printf("String after |%c| is - |%s|\n", ch, ret);
 
-	ret = '\0';
+	ret = NULL;
 	ret = ft_memchr(str2, ch, strlen(str2));
 
 	printf("String after |%c| is - |%s|\n", ch, ret);
@@ -259,13 +259,9 @@ int main()
 
 	c = '9';
 	printf("isascii: %d", isascii(c));
-	c = 200;
-	printf("\nisascii: %d", isascii(c));
 
 	c = '9';
 	printf("\nft_isascii: %d", ft_isascii(c));
-	c = 200;
-	printf("\nft_isascii: %d\n", ft_isascii(c));
 
 	puts("=================================");
 
