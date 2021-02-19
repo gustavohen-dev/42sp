@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 00:25:50 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/19 04:15:00 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/19 04:17:20 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int		ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-	size_t count;
-	int value;
+	size_t count = 0;
+	int value = 0;
 
-	value = 0;
-	count = 0;
+	//value = 0;
+	//count = 0;
 	if (str1 == str2 || n == 0)
 	{
 		return (0);
