@@ -6,13 +6,13 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 00:29:20 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/15 21:33:57 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/19 04:05:45 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_check_atoi(const char *str)
+int			ft_check_atoi(const char *str)
 {
 	int count;
 
@@ -27,7 +27,7 @@ int		ft_check_atoi(const char *str)
 	return (count);
 }
 
-int     ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	unsigned int 	count;
 	long int 		rtn;
