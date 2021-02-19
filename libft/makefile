@@ -19,8 +19,6 @@ $(NAME): $(SRCS) libft.h
 	gcc $(FLAGS) -c $(SRCS) $(SRCS_BONUS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
-	gcc $(FLAGS) main.c libft.a
-	./a.out
 
 bonus: $(OBJS) $(OBJS_BONUS)
 	ar rc $(NAME) $(OBJS) $(OBJS_BONUS)
