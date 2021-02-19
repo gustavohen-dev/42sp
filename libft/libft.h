@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 00:26:28 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/19 02:44:32 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/19 03:19:18 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,9 @@ void			ft_lstadd_back(t_list **lst, t_list *new);
 void			ft_lstdelone(t_list *lst, void (*del)(void*));
 
 void			ft_lstclear(t_list **lst, void (*del)(void *));
+
+void			ft_lstiter(t_list *lst, void (*f)(void *));
+
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
