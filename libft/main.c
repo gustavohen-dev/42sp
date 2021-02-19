@@ -1,4 +1,7 @@
 #include "libft.h"
+#include <string.h>
+#include <ctype.h>
+#include <stdio.h>
 
 int main()
 {
@@ -432,7 +435,7 @@ int main()
 
 	char **p;
 	int    j;
-	p = ft_split("          ", ' ');
+	p = ft_split("   da   sa  fdsa  ", ' ');
 	j = 0;
 	while(p[j] != NULL)
 	{

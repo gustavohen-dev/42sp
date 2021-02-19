@@ -6,13 +6,13 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 23:53:53 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/18 06:41:04 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/19 00:45:26 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_rmspc(char const *s)
+char	*ft_rmspc(char const *s, const char c)
 {
 	char	*str;
 	int		count;
@@ -21,18 +21,18 @@ char	*ft_rmspc(char const *s)
 	str = malloc(sizeof(char) * ft_strlen(s));
 	count = 0;
 	count2 = 0;
-	while (s[count] == ' ')
+	while (s[count] == c)
 		count++;
 	while (s[count])
 	{
-		if ((s[count] == ' ' && s[count + 1] != ' ') || s[count] != ' ')
+		if ((s[count] == c && s[count + 1] != c) || s[count] != c)
 		{
 			str[count2] = s[count];
 			count2++;
 		}
 		count++;
 	}
-	while (str[--count2] == ' ')
+	while (str[--count2] == c)
 		str[count2] = '\0';
 		
 	return (str);
@@ -72,7 +72,7 @@ int		ft_nbstrs(char const *s, char c)
 	{
 		if (s[len] == c)
 		{
-			while (s[len] == ' ')
+			while (s[len] == c)
 			{
 				if (len == 0)
 				{
@@ -97,7 +97,7 @@ char	**ft_split(char const *s, char c)
 	count = 0;
 	if (!s)
 		return (0);
-	str = ft_rmspc(s);
+	str = ft_rmspc(s, c);
 	n_strs = ft_nbstrs(str, c);
 	if (!(tab = (char **)malloc(sizeof(char *) * (n_strs + 2))))
 		return (0);
