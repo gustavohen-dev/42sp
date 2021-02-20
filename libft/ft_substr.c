@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 19:56:46 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/15 23:54:09 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/20 00:53:46 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	start_count = start;
 	s_len = ft_strlen(s);
 	if (!(str = malloc(sizeof(char) * (s_len + 1))))
-	{
 		return (0);
-	}
 	if (start < s_len)
 	{
 		while (start_count < start + len && s[start_count] != '\0')

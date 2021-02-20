@@ -6,52 +6,31 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 00:29:20 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/19 04:05:45 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/20 00:43:54 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_check_atoi(const char *str)
-{
-	int count;
-
-	count = 0;
-	while (*str == '\0' || *str == ' ' || *str == '\t' || *str == '\n' || 
-	*str == '\v' || *str == '\f' || *str == '\r')
-	{
-		str++;
-		count++;
-	}
-	
-	return (count);
-}
-
 int			ft_atoi(const char *str)
 {
-	unsigned int 	count;
-	long int 		rtn;
-	long int 		mult;
-	long int 		check;
+	long int		num;
+	unsigned int	count;
+	long int		neg;
 
-	check = ft_check_atoi(str);
-	mult = 1;
-	rtn = 0;
+	neg = 1;
 	count = 0;
-	if (*str == '\0')
-		return (0);
-	if (check > 0)
-		count = check;
-	if (str[count] == '-' || str[count] == '+')
+	num = 0;
+	while (str[count] == ' ' || str[count] == '\t' || str[count] == '\f' ||
+			str[count] == '\r' || str[count] == '\n' || str[count] == '\v')
 		count++;
-	while (ft_isdigit(str[count]) && str[count] != '\0')
+	if (str[count] == '+' || str[count] == '-')
+		if (str[count++] == '-')
+			neg = -1;
+	while (str[count] >= '0' && str[count] <= '9')
 	{
-		rtn = rtn * mult;
-		rtn = rtn + (str[count] - 48);
-		mult = 10;
+		num = num * 10 + (str[count] - '0');
 		count++;
 	}
-	if (str[check] == '-')
-		rtn = rtn * -1;
-	return (rtn);
+	return ((long int)(neg * num));
 }

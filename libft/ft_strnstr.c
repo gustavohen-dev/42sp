@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 01:51:37 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/11 02:18:25 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/20 00:27:46 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,16 @@
 
 char	*ft_strnstr(const char *str, const char *pattern, size_t len)
 {
-	size_t count;
-	unsigned int aux;
+	size_t len_p;
 
-	count = 0;
-	if (pattern == 0 || *pattern == '\0')
-	{
+	if (*pattern == '\0')
 		return ((char *)str);
-	}
-
-	while (str[count] != '\0' && count < len)
+	len_p = ft_strlen(pattern);
+	while (*str != '\0' && len-- >= len_p)
 	{
-		aux = 0;
-		while (pattern[aux] == str[count + aux] && count + aux < len)
-		{
-			if (pattern[aux + 1] == '\0')
-			{
-				return ((char *)str + count);
-			}
-			aux++;
-		}
-		count++;
+		if (*str == *pattern && ft_strncmp(str, pattern, len_p) == 0)
+			return ((char *)str);
+		str++;
 	}
 	return (0);
 }

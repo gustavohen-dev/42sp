@@ -305,7 +305,7 @@ int main()
 	int val;
 	char str_atoi[50];
 	
-	strcpy(str_atoi, "\n\n\n  -46\b9 \n5d6");
+	strcpy(str_atoi, "65748564");
 	val = atoi(str_atoi);
 	printf("atoi - String value = %s, Int value = %d\n", str_atoi, val);
 
@@ -313,7 +313,7 @@ int main()
 	val = atoi(str_atoi);
 	printf("atoi - String value = %s, Int value = %d\n", str_atoi, val);
 
-	strcpy(str_atoi, "\n\n\n  -46\b9 \n5d6");
+	strcpy(str_atoi, "65748564");
 	val = ft_atoi(str_atoi);
 	printf("ft_atoi - String value = %s, Int value = %d\n", str_atoi, val);
 
@@ -348,12 +348,12 @@ int main()
 
 	puts("=================================");
 
-	char *str14 = "Helloworld";
+	char *str14 = "lorem ipsum dolor sit amet";
 	char *result;
 	result = strdup(str14);
 	printf("strdup : %s\n", result);
 
-	char *str15 = "Helloworld";
+	char *str15 = "lorem ipsum dolor sit amet";
 	char *result1;
 	result1 = ft_strdup(str15);
 	printf("ft_strdup : %s\n", result1);
@@ -379,8 +379,8 @@ int main()
 
 	puts("=================================");
 
-	char *str18 = "fjHello World!sdjf";
-	char *str19 = "dsdjfl ";
+	char *str18 = "lorem ipsum dolor sit amet";
+	char *str19 = "tel";
 
 	printf("s1: %s\n", str18);
 	printf("s2: %s\n", str19);
@@ -391,7 +391,7 @@ int main()
 	int nb;
 	char *str20;
 	  
-	nb = -2147483648LL;
+	nb = 0;
 	str20 = ft_itoa(nb);
 
 	printf("Nb: %d\n", nb);
@@ -438,6 +438,10 @@ int main()
 	printf("%s\n", p[j]);
 	j++;
 	}
+
+	puts("=================================");
+
+	ft_memcpy(((void*)0), ((void*)0), 3);
 
 	return (0);
 }
