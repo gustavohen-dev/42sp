@@ -11,7 +11,7 @@ SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
 
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
-FLAGS = -Wextra -Werror -Wall
+FLAGS = -Wextra -Wall -Werror
 CC = gcc -c
 
 all: $(NAME)
@@ -19,10 +19,8 @@ all: $(NAME)
 $(NAME): $(SRCS) libft.h
 	gcc $(FLAGS) -c $(SRCS)
 	ar -rcs $(NAME) $(OBJS)
-	gcc $(FLAGS) main.c libft.a
-	./a.out
 
-bonus: all $(OBJS_BONUS) $(NAME)
+bonus:	$(NAME) $(OBJS_BONUS)
 	gcc $(FLAGS) -c $(SRCS_BONUS)
 	ar -rcs $(NAME) $(OBJS_BONUS) $(OBJS)
 
@@ -42,5 +40,5 @@ git: fclean clean
 	git push
 
 so:
-	gcc -c -fPIC $(FLAGS) $(SRCS)
-	gcc -shared -o libft.so $(OBJS)
+	gcc -c -fPIC $(FLAGS) $(SRCS) $(SRCS_BONUS) 
+	gcc -shared -o libft.so $(OBJS) $(OBJS_BONUS)

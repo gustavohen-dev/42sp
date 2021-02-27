@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 00:38:30 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/19 22:51:17 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/27 09:45:56 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int		ft_len(long nb)
 		len++;
 		nb = nb * -1;
 	}
+	else if (nb == 0)
+		return (1);
 	while (nb > 0)
 	{
 		nb = nb / 10;
@@ -54,10 +56,11 @@ char     *ft_itoa(int n)
 
 	len = ft_len(n);
 	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
-		return (0);
+		return (NULL);
 	if (n == 0)
 	{
-		str[0] = '0';
+		str[0] = 48;
+		str[1] = '\0';
 		return (str);
 	}	
 	ft_printnb(n, str, len);

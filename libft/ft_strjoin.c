@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 20:35:55 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/15 21:20:56 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/27 10:01:29 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		s2++;
 		count++;
 	}
-	str[count] = '\0';
+	
 	return (str);
 }
