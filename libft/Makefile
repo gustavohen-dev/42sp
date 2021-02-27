@@ -35,6 +35,7 @@ re: fclean clean all
 .PHONY: all bonus clean fclean re
 
 git: fclean clean
+	rm -rf libft.so a.out
 	git add .
 	git commit -m "Update"
 	git push
