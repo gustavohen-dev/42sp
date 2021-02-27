@@ -6,13 +6,13 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 23:53:53 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/19 00:45:26 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/27 10:25:37 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_rmspc(char const *s, const char c)
+char		*ft_rmspc(char const *s, const char c)
 {
 	char	*str;
 	int		count;
@@ -25,7 +25,8 @@ char	*ft_rmspc(char const *s, const char c)
 		count++;
 	while (s[count])
 	{
-		if ((s[count] == c && s[count + 1] != c) || s[count] != c)
+		if ((s[count] == c && s[count + 1] != c) || s[count] != c ||
+		(s[count] == ' ' && s[count + 1] != ' '))
 		{
 			str[count2] = s[count];
 			count2++;
@@ -38,7 +39,7 @@ char	*ft_rmspc(char const *s, const char c)
 	return (str);
 }
 
-char	*ft_addstr(char const *s, char c, int block)
+char		*ft_addstr(char const *s, char c, int block)
 {
 	int		end;
 
@@ -61,7 +62,7 @@ char	*ft_addstr(char const *s, char c, int block)
 	return (ft_substr(s, 0, end));
 }
 
-int		ft_nbstrs(char const *s, char c)
+int			ft_nbstrs(char const *s, char c)
 {
 	int		len;
 	int		rtn;
@@ -87,7 +88,7 @@ int		ft_nbstrs(char const *s, char c)
 	return (rtn);
 }
 
-char	**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	char	**tab;
 	char	*str;
@@ -101,7 +102,7 @@ char	**ft_split(char const *s, char c)
 	n_strs = ft_nbstrs(str, c);
 	if (!(tab = (char **)malloc(sizeof(char *) * (n_strs + 2))))
 		return (0);
-	while (s[count] && s[count] == ' ')
+	while ((s[count] && s[count] == ' ') || (s[count] && s[count] == c))
 	{
 		if (s[count + 1] == '\0')
 			return (tab);

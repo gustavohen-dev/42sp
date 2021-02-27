@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 20:35:55 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/27 10:01:29 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/27 10:53:44 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*str;
 	int		len;
 	int 	count;
-
+	if (!s1 || !s2)
+		return (NULL);
 	count = 0;
 	len = ft_strlen(s1) + ft_strlen(s2);
 	if (!(str = malloc(sizeof(char) * (len + 1))))
@@ -34,6 +35,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		s2++;
 		count++;
 	}
-	
+	str[count] = '\0';
 	return (str);
 }
