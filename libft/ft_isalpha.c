@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 05:05:54 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/15 19:32:46 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/27 12:24:03 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,5 @@ int		ft_isalpha(int arg)
 	{
 		return (1024);
 	}
-
 	return (0);
 }

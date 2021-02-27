@@ -6,17 +6,18 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 20:35:55 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/27 10:53:44 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/27 12:48:17 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char			*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 	int		len;
-	int 	count;
+	int		count;
+
 	if (!s1 || !s2)
 		return (NULL);
 	count = 0;
@@ -27,7 +28,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		str[count] = *s1;
 		s1++;
-		count ++;
+		count++;
 	}
 	while (*s2 != '\0')
 	{

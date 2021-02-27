@@ -6,13 +6,13 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 00:24:30 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/15 19:34:14 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/27 12:48:43 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+size_t			ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	len_dest;

@@ -6,13 +6,13 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 07:09:41 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/11 02:18:40 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/27 12:54:24 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+int				ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 	{

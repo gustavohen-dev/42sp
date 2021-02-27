@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 02:41:44 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/19 03:14:01 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/27 12:31:13 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void			ft_lstclear(t_list **lst, void (*del)(void *))
 	{
 		while (*lst)
 		{
-			aux = (*lst) -> next;
+			aux = (*lst)->next;
 			ft_lstdelone(*lst, del);
 			*lst = aux;
 		}

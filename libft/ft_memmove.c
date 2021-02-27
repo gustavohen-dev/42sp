@@ -6,13 +6,13 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 00:26:03 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/15 19:33:41 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/27 12:39:02 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void			*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t count;
 

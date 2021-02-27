@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 03:14:21 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/19 03:17:20 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/27 12:32:57 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void			ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst)
 	{
-		f(lst -> content);
-		lst = lst -> next;
+		f(lst->content);
+		lst = lst->next;
 	}
 }

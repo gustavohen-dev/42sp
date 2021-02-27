@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 05:22:38 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/15 19:33:03 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/27 12:24:56 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,5 @@ int		ft_isdigit(int arg)
 	{
 		return (2048);
 	}
-
 	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 19:56:46 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/27 09:57:52 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/27 12:54:17 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char			*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	unsigned int	count;
 	unsigned int	s_len;
