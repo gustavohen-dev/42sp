@@ -38,11 +38,7 @@ re: fclean clean all
 .PHONY: all bonus clean fclean re
 
 git: fclean clean
-	rm -rf libft.so a.out
+	rm -rf a.out
 	git add .
 	git commit -m "Update"
 	git push
-
-so:
-	gcc -c -fPIC $(FLAGS) $(SRCS) $(SRCS_BONUS) 
-	gcc -shared -o libft.so $(OBJS) $(OBJS_BONUS)
