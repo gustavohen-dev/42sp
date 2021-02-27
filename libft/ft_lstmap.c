@@ -6,7 +6,7 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/19 03:17:55 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/19 04:05:16 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/27 11:16:21 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list		*new;
 	t_list		*add;
 
+
+	if (!lst || !f)
+		return (NULL);
 	while (lst)
 	{
 		add = ft_lstnew(f(lst -> content));

@@ -19,10 +19,13 @@ all: $(NAME)
 $(NAME): $(SRCS) libft.h
 	gcc $(FLAGS) -c $(SRCS)
 	ar -rcs $(NAME) $(OBJS)
+	gcc main.c libft.a
+	./a.out
 
 bonus:	$(NAME) $(OBJS_BONUS)
 	gcc $(FLAGS) -c $(SRCS_BONUS)
 	ar -rcs $(NAME) $(OBJS_BONUS) $(OBJS)
+
 
 clean:
 	rm -f $(OBJS) $(OBJS_BONUS)

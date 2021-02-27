@@ -6,112 +6,96 @@
 /*   By: ghenriqu <ghenriqu@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 23:53:53 by ghenriqu          #+#    #+#             */
-/*   Updated: 2021/02/27 10:25:37 by ghenriqu         ###   ########.fr       */
+/*   Updated: 2021/02/27 12:18:22 by ghenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_rmspc(char const *s, const char c)
+char			**ft_malloc_error(char **tab)
 {
-	char	*str;
-	int		count;
-	int		count2;
+	unsigned int	i;
 
-	str = malloc(sizeof(char) * ft_strlen(s));
-	count = 0;
-	count2 = 0;
-	while (s[count] == c)
-		count++;
-	while (s[count])
+	i = 0;
+	while (tab[i])
 	{
-		if ((s[count] == c && s[count + 1] != c) || s[count] != c ||
-		(s[count] == ' ' && s[count + 1] != ' '))
-		{
-			str[count2] = s[count];
-			count2++;
-		}
-		count++;
+		free(tab[i]);
+		i++;
 	}
-	while (str[--count2] == c)
-		str[count2] = '\0';
-		
-	return (str);
+	free(tab);
+	return (NULL);
 }
 
-char		*ft_addstr(char const *s, char c, int block)
+unsigned int	ft_get_nb_strs(char const *s, char c)
 {
-	int		end;
+	unsigned int	i;
+	unsigned int	nb_strs;
 
-	end = 0;
-	if (block > 0)
+	if (!s[0])
+		return (0);
+	i = 0;
+	nb_strs = 0;
+	while (s[i] && s[i] == c)
+		i++;
+	while (s[i])
 	{
-		while (s && block > 0)
+		if (s[i] == c)
 		{
-			if (*s == c)
-			{
-				block--;
-			}
-			s++;
+			nb_strs++;
+			while (s[i] && s[i] == c)
+				i++;
+			continue ;
 		}
+		i++;
 	}
-	while (s[end] != c && s[end])
-	{
-		end++;
-	}
-	return (ft_substr(s, 0, end));
+	if (s[i - 1] != c)
+		nb_strs++;
+	return (nb_strs);
 }
 
-int			ft_nbstrs(char const *s, char c)
+void			ft_get_next_str(char **next_str, unsigned int *next_str_len,
+					char c)
 {
-	int		len;
-	int		rtn;
+	unsigned int i;
 
-	rtn = 0;
-	len = ft_strlen(s);
-	while (len >= 0)
+	*next_str += *next_str_len;
+	*next_str_len = 0;
+	i = 0;
+	while (**next_str && **next_str == c)
+		(*next_str)++;
+	while ((*next_str)[i])
 	{
-		if (s[len] == c)
-		{
-			while (s[len] == c)
-			{
-				if (len == 0)
-				{
-					return (rtn);
-				}
-				len--;
-			}
-			rtn++;
-		}
-		len--;
+		if ((*next_str)[i] == c)
+			return ;
+		(*next_str_len)++;
+		i++;
 	}
-	return (rtn);
 }
 
-char		**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
-	char	**tab;
-	char	*str;
-	int		n_strs;
-	int		count;
+	char			**tab;
+	char			*next_str;
+	unsigned int	next_str_len;
+	unsigned int	nb_strs;
+	unsigned int	i;
 
-	count = 0;
 	if (!s)
-		return (0);
-	str = ft_rmspc(s, c);
-	n_strs = ft_nbstrs(str, c);
-	if (!(tab = (char **)malloc(sizeof(char *) * (n_strs + 2))))
-		return (0);
-	while ((s[count] && s[count] == ' ') || (s[count] && s[count] == c))
+		return (NULL);
+	nb_strs = ft_get_nb_strs(s, c);
+	if (!(tab = (char **)malloc(sizeof(char *) * (nb_strs + 1))))
+		return (NULL);
+	i = 0;
+	next_str = (char *)s;
+	next_str_len = 0;
+	while (i < nb_strs)
 	{
-		if (s[count + 1] == '\0')
-			return (tab);
-		count++;
+		ft_get_next_str(&next_str, &next_str_len, c);
+		if (!(tab[i] = (char *)malloc(sizeof(char) * (next_str_len + 1))))
+			return (ft_malloc_error(tab));
+		ft_strlcpy(tab[i], next_str, next_str_len + 1);
+		i++;
 	}
-	while (n_strs >= 0)
-	{
-		tab[n_strs] = ft_addstr(str, c, n_strs);
-		n_strs--;
-	}
+	tab[i] = NULL;
 	return (tab);
 }
